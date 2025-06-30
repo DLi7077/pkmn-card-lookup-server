@@ -26,7 +26,7 @@ async function findJapaneseCard(
 ): Promise<void> {
   const query: JapaneseCardQuery = {
     name: request.query.name as EnglishNames,
-    existingIds: request.query.existingIds as string[],
+    existingIds: (request.query.existingIds as string).split(","),
   };
   try {
     const cards = await findJapaneseCards(query.name, query.existingIds);

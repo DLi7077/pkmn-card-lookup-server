@@ -1,11 +1,12 @@
 export type CardDetails = {
   artist: string;
-  cardImgUrl: string;
+  imgUrl: string;
   cardName: string;
   rarity: string;
   set: string;
-  setCardId: string;
   setId: string;
+  setCardId: number;
+  setCardCount: number;
   cardId?: string;
   language?: string;
   name?: string;

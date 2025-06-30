@@ -11,7 +11,7 @@ export default async function findJapaneseCards(
   englishName: string,
   existingIds: string[]
 ): Promise<any> {
-  const existingIdSet = new Set(existingIds);
+  const existingIdSet = new Set<String>(existingIds);
   const japaneseName = englishToJapanese(englishName as EnglishNames);
   const cardIds = (await getJapaneseCardIds(japaneseName))
     .map((cardData) => cardData.cardID)
@@ -50,6 +50,7 @@ async function lookupCardsById({
     const cardDetails = {
       ...response,
       cardName: englishName,
+      name: japaneseName,
       language: "JP",
       cardId: cardId,
     };
