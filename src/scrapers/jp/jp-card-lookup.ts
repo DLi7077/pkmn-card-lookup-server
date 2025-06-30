@@ -49,8 +49,7 @@ async function lookupCardsById({
     const response = await getCardDataById(cardId);
     const cardDetails = {
       ...response,
-      cardName: englishName,
-      name: japaneseName,
+      name: englishName,
       language: "JP",
       cardId: cardId,
     };
