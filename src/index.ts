@@ -2,6 +2,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import express from "express";
 import generateEndpoints from "./controller";
+require('console-stamp')(console, '[HH:MM:ss.l]')
 
 const application = express();
 
