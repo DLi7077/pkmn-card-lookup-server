@@ -45,6 +45,8 @@ async function lookupCardsById({
 }): Promise<CardDetails[]> {
   const cards: CardDetails[] = [];
   for (const cardId of cardIds) {
+    const taskDelay = randomNumberBetween(1, 1.5) * 1000;
+    await sleep(taskDelay);
     console.log(`[${cardId}] Retrieving card details`);
     const response = await getCardDataById(cardId);
     const cardDetails = {
@@ -56,9 +58,6 @@ async function lookupCardsById({
 
     cards.push(cardDetails);
     console.log(`[${cardId}] Pulled card details`);
-
-    const taskDelay = randomNumberBetween(0.5, 1) * 1000;
-    await sleep(taskDelay);
   }
 
   return cards;
